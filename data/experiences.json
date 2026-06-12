@@ -1,0 +1,47 @@
+```json
+[
+  {
+    "id": "booths_logistics_admin",
+    "company": "Booths",
+    "role": "Logistics Admin",
+    "location": "United Kingdom",
+    "start_date": "2024-06",
+    "end_date": "Present",
+    "domains": [
+      "operations",
+      "systems_support",
+      "logistics",
+      "warehouse_operations"
+    ],
+    "skills": [
+      "Dynamics 365 Business Central",
+      "Excel",
+      "workflow optimisation",
+      "inventory investigation",
+      "technical troubleshooting",
+      "warehouse systems"
+    ],
+    "achievements": [
+      "Improved stock delivery rate from 89% to 98%",
+      "Improved inventory correction accuracy from 85% to 96%",
+      "Created automated Excel investigation workflows",
+      "Supported Business Central implementation workflows"
+    ],
+    "responsibilities": [
+      "Managed warehouse operational workflows",
+      "Resolved inventory discrepancies",
+      "Supported warehouse systems troubleshooting",
+      "Created operational documentation and workflow guides",
+      "Assisted colleagues during system transitions"
+    ],
+    "ats_keywords": [
+      "process improvement",
+      "technical support",
+      "workflow optimisation",
+      "ERP systems",
+      "inventory management",
+      "operations support"
+    ]
+  }
+]
+```

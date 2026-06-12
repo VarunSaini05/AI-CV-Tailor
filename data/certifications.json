@@ -1,0 +1,135 @@
+```json id="9w9bsq"
+[
+  {
+    "id": "nasa_dark_matter",
+    "issuer": "NASA",
+    "title": "Learning from Dark Matter and Energy",
+    "date": "2018-07-31",
+    "domains": [
+      "astronomy",
+      "space_science",
+      "scientific_research"
+    ],
+    "skills": [
+      "scientific analysis",
+      "astronomy concepts",
+      "space science"
+    ],
+    "ats_keywords": [
+      "NASA",
+      "scientific research",
+      "data analysis",
+      "space science"
+    ]
+  },
+  {
+    "id": "nasa_rockets_101",
+    "issuer": "NASA",
+    "title": "Explore Space Tech: Rockets 101",
+    "date": "2018-08-02",
+    "domains": [
+      "aerospace",
+      "propulsion",
+      "space_technology"
+    ],
+    "skills": [
+      "rocket propulsion",
+      "space systems",
+      "engineering fundamentals"
+    ],
+    "ats_keywords": [
+      "NASA",
+      "rocket systems",
+      "aerospace engineering",
+      "space technology"
+    ]
+  },
+  {
+    "id": "nasa_exoplanets",
+    "issuer": "NASA",
+    "title": "Technology Drives Exploration: Detecting Exoplanets",
+    "date": "2018-08-06",
+    "domains": [
+      "astronomy",
+      "space_observation",
+      "scientific_analysis"
+    ],
+    "skills": [
+      "space observation",
+      "scientific interpretation",
+      "astronomy"
+    ],
+    "ats_keywords": [
+      "NASA",
+      "astronomy",
+      "scientific analysis",
+      "space exploration"
+    ]
+  },
+  {
+    "id": "iarc_life_in_space",
+    "issuer": "IARC",
+    "title": "Life in Space",
+    "date": "2018-03-25",
+    "domains": [
+      "space_science",
+      "aerospace",
+      "research"
+    ],
+    "skills": [
+      "space science",
+      "research awareness"
+    ],
+    "ats_keywords": [
+      "space science",
+      "research",
+      "aerospace"
+    ]
+  },
+  {
+    "id": "imeche_membership",
+    "issuer": "Institution of Mechanical Engineers",
+    "title": "IMechE Membership",
+    "membership_number": "80722313",
+    "domains": [
+      "mechanical_engineering",
+      "professional_engineering"
+    ],
+    "ats_keywords": [
+      "IMechE",
+      "mechanical engineering",
+      "professional membership"
+    ]
+  },
+  {
+    "id": "ies_membership",
+    "issuer": "Institute of Engineers Singapore",
+    "title": "Engineering Membership",
+    "membership_number": "2023PSB0003",
+    "domains": [
+      "engineering",
+      "professional_membership"
+    ],
+    "ats_keywords": [
+      "engineering",
+      "professional membership"
+    ]
+  },
+  {
+    "id": "nvidia_developer",
+    "issuer": "NVIDIA",
+    "title": "NVIDIA Developer Program",
+    "domains": [
+      "ai",
+      "development",
+      "gpu_computing"
+    ],
+    "ats_keywords": [
+      "NVIDIA",
+      "AI",
+      "developer program",
+      "machine learning"
+    ]
+  }
+]
+```

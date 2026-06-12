@@ -1,0 +1,46 @@
+```json
+{
+  "engineering": [
+    "SolidWorks",
+    "ANSYS Fluent",
+    "ANSYS Mechanical",
+    "MATLAB",
+    "AutoCAD",
+    "technical drafting",
+    "FEA",
+    "CFD",
+    "thermodynamics",
+    "compressible flow"
+  ],
+  "programming": [
+    "Python",
+    "VBA",
+    "Git",
+    "GitHub",
+    "API automation"
+  ],
+  "ai_data": [
+    "Machine Learning",
+    "Computer Vision",
+    "NLP",
+    "Sentiment Analysis",
+    "Predictive Analytics",
+    "ETL pipelines",
+    "Data Analysis"
+  ],
+  "operations": [
+    "Dynamics 365 Business Central",
+    "Inventory Management",
+    "Workflow Optimisation",
+    "Excel Automation",
+    "Operational Analytics"
+  ],
+  "soft_skills": [
+    "Leadership",
+    "Problem Solving",
+    "Technical Communication",
+    "Adaptability",
+    "Systems Thinking"
+  ]
+}
+```
