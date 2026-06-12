@@ -1,45 +1,162 @@
 [
   {
     "id": "booths_logistics_admin",
+    "role": "Logistics Administrator",
     "company": "Booths",
-    "role": "Logistics Admin",
-    "location": "United Kingdom",
-    "start_date": "2024-06",
-    "end_date": "Present",
+    "type": "Operations & Systems Support",
+
     "domains": [
-      "operations",
-      "systems_support",
-      "logistics",
-      "warehouse_operations"
+      "Operations",
+      "Inventory Systems",
+      "Warehouse Analytics",
+      "Workflow Optimisation",
+      "Technical Support"
     ],
+
+    "tools": [
+      "Microsoft Excel",
+      "Business Central",
+      "Warehouse Management Systems",
+      "Microsoft Teams"
+    ],
+
     "skills": [
-      "Dynamics 365 Business Central",
+      "inventory management",
+      "technical troubleshooting",
+      "workflow optimisation",
+      "technical documentation",
+      "operational analytics",
+      "data analysis",
+      "systems support",
+      "warehouse operations",
+      "problem solving",
+      "process improvement"
+    ],
+
+    "responsibilities": [
+      "Supported warehouse operational workflows",
+      "Investigated inventory discrepancies",
+      "Reduced support escalations through independent troubleshooting",
+      "Created Excel automation tools for operational analysis",
+      "Supported Business Central rollout workflows",
+      "Produced operational documentation and guides"
+    ],
+
+    "achievements": [
+      "Improved warehouse workflow visibility",
+      "Reduced operational inefficiencies",
+      "Supported smoother system rollout adoption"
+    ],
+
+    "ats_keywords": [
+      "technical documentation",
+      "operations",
+      "inventory systems",
       "Excel",
       "workflow optimisation",
-      "inventory investigation",
-      "technical troubleshooting",
-      "warehouse systems"
-    ],
-    "achievements": [
-      "Improved stock delivery rate from 89% to 98%",
-      "Improved inventory correction accuracy from 85% to 96%",
-      "Created automated Excel investigation workflows",
-      "Supported Business Central implementation workflows"
-    ],
-    "responsibilities": [
-      "Managed warehouse operational workflows",
-      "Resolved inventory discrepancies",
-      "Supported warehouse systems troubleshooting",
-      "Created operational documentation and workflow guides",
-      "Assisted colleagues during system transitions"
-    ],
-    "ats_keywords": [
-      "process improvement",
       "technical support",
-      "workflow optimisation",
-      "ERP systems",
-      "inventory management",
-      "operations support"
+      "data analysis",
+      "warehouse systems"
+    ]
+  },
+
+  {
+    "id": "cad_engineering_workflows",
+    "role": "CAD & Engineering Workflow Support",
+    "company": "Engineering Projects",
+    "type": "Engineering & Manufacturing",
+
+    "domains": [
+      "CAD",
+      "Manufacturing",
+      "Engineering Documentation",
+      "Technical Drafting"
+    ],
+
+    "tools": [
+      "SolidWorks",
+      "AutoCAD",
+      "Engineering Documentation Tools"
+    ],
+
+    "skills": [
+      "technical drafting",
+      "manufacturing workflows",
+      "technical documentation",
+      "2D drafting",
+      "3D modelling",
+      "drawing revisions",
+      "engineering coordination",
+      "assembly understanding",
+      "fabrication support"
+    ],
+
+    "responsibilities": [
+      "Produced manufacturing-focused technical drawings",
+      "Supported engineering workflow coordination",
+      "Managed drawing revisions and updates",
+      "Created fabrication-oriented documentation",
+      "Supported practical production workflows"
+    ],
+
+    "achievements": [
+      "Improved drawing consistency",
+      "Supported manufacturable engineering workflows",
+      "Maintained organised engineering documentation"
+    ],
+
+    "ats_keywords": [
+      "manufacturing",
+      "technical documentation",
+      "CAD",
+      "SolidWorks",
+      "AutoCAD",
+      "engineering drawings",
+      "fabrication"
+    ]
+  },
+
+  {
+    "id": "scientific_research_analysis",
+    "role": "Scientific Dataset Analyst",
+    "company": "NASA & Zooniverse",
+    "type": "Research & Data Analysis",
+
+    "domains": [
+      "Scientific Research",
+      "Astronomy",
+      "Data Analysis"
+    ],
+
+    "tools": [
+      "NASA Datasets",
+      "Zooniverse"
+    ],
+
+    "skills": [
+      "data analysis",
+      "pattern recognition",
+      "scientific observation",
+      "dataset analysis",
+      "research workflows"
+    ],
+
+    "responsibilities": [
+      "Reviewed over 1000 astronomy images",
+      "Identified supernovae and astronomical anomalies",
+      "Participated in scientific classification workflows"
+    ],
+
+    "achievements": [
+      "Contributed to citizen science research initiatives",
+      "Worked with large-scale scientific datasets"
+    ],
+
+    "ats_keywords": [
+      "data analysis",
+      "research",
+      "scientific analysis",
+      "large datasets"
     ]
   }
 ]

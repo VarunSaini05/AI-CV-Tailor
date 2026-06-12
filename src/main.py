@@ -1,18 +1,33 @@
 from parser import ExperienceGraph
+from ats_score import ATSScorer
 
 graph = ExperienceGraph()
-
-print("\n=== ALL PROJECTS ===")
-print(graph.get_all_projects())
-
-print("\n=== SEARCH: CFD ===")
-print(graph.search_by_skill("CFD"))
-
-print("\n=== ROLE CLASSIFICATION ===")
+ats = ATSScorer(graph)
 
 job_description = """
-Looking for an aerospace engineering graduate
-with CFD, ANSYS, simulation and propulsion experience.
+We are seeking an Aerospace Engineering graduate with
+experience in CFD, ANSYS, SolidWorks, simulation,
+technical documentation and manufacturing workflows.
+
+Knowledge of Python automation and data analysis
+is highly desirable.
 """
 
+print("\n=== ROLE CLASSIFICATION ===")
 print(graph.classify_role(job_description))
+
+print("\n=== ATS ANALYSIS ===")
+results = ats.calculate_score(job_description)
+
+print(f"\nATS SCORE: {results['ats_score']}%")
+
+print("\nMATCHED KEYWORDS:")
+print(results["matched_keywords"])
+
+print("\nMISSING KEYWORDS:")
+print(results["missing_keywords"])
+
+print("\nMATCHED EXPERIENCES:")
+for item in results["matched_experiences"]:
+    print(f"- {item.get('title', item.get('role', 'Unknown'))}")
+

@@ -1,60 +1,220 @@
 [
-{
-"id": "hydrogen_nozzle_project",
-"title": "Hydrogen Propulsion Nozzle CFD & Automation System",
-"category": "Aerospace Engineering",
+  {
+    "id": "hydrogen_nozzle_project",
+    "title": "Hydrogen Propulsion Nozzle CFD & Automation System",
+    "category": "Aerospace Engineering",
 
+    "domains": [
+      "CFD",
+      "FEA",
+      "CAD Automation",
+      "Propulsion",
+      "Simulation"
+    ],
 
-"domains": [
-  "CFD",
-  "FEA",
-  "CAD Automation",
-  "Propulsion",
-  "Simulation"
-],
+    "tools": [
+      "ANSYS Fluent",
+      "ANSYS Mechanical",
+      "SolidWorks",
+      "MATLAB",
+      "Excel",
+      "VBA",
+      "SolidWorks API"
+    ],
 
-"tools": [
-  "ANSYS Fluent",
-  "ANSYS Mechanical",
-  "SolidWorks",
-  "MATLAB",
-  "Excel",
-  "VBA",
-  "SolidWorks API"
-],
+    "skills": [
+      "compressible flow",
+      "thermo-structural analysis",
+      "mesh independence",
+      "CFD validation",
+      "parametric modelling",
+      "automation scripting",
+      "simulation workflows",
+      "technical documentation",
+      "engineering analysis",
+      "engineering Simulation"
+    ],
 
-"skills": [
-  "compressible flow",
-  "thermo-structural analysis",
-  "mesh independence",
-  "CFD validation",
-  "parametric modelling",
-  "automation scripting"
-],
+    "technical_concepts": [
+      "de Laval nozzle",
+      "k-omega SST turbulence model",
+      "supersonic flow",
+      "hydrogen propulsion",
+      "thermal stress analysis"
+    ],
 
-"technical_concepts": [
-  "de Laval nozzle",
-  "k-omega SST turbulence model",
-  "supersonic flow",
-  "hydrogen propulsion",
-  "thermal stress analysis"
-],
+    "achievements": [
+      "Simulated hydrogen flow at temperatures up to 5000K",
+      "Achieved approximately 11.4 km/s exit velocity",
+      "Automated nozzle geometry generation using SolidWorks API"
+    ],
 
-"achievements": [
-  "Simulated hydrogen flow at temperatures up to 5000K",
-  "Achieved approximately 11.4 km/s exit velocity",
-  "Automated nozzle geometry generation using SolidWorks API"
-],
+    "ats_keywords": [
+      "CFD analysis",
+      "ANSYS",
+      "SolidWorks",
+      "simulation engineer",
+      "propulsion systems",
+      "engineering optimisation"
+    ]
+  },
 
-"ats_keywords": [
-  "CFD analysis",
-  "ANSYS",
-  "SolidWorks",
-  "simulation engineer",
-  "propulsion systems",
-  "engineering optimisation"
-]
+  {
+    "id": "warehouse_intelligence_platform",
+    "title": "Warehouse Intelligence & Inventory Analytics Platform",
+    "category": "Data Engineering",
 
+    "domains": [
+      "Data Analytics",
+      "Operations",
+      "Warehouse Intelligence",
+      "Automation",
+      "Dashboard Development"
+    ],
 
-}
+    "tools": [
+      "Python",
+      "Pandas",
+      "Streamlit",
+      "Plotly",
+      "GitHub",
+      "Excel",
+      "Business Central"
+    ],
+
+    "skills": [
+      "ETL pipelines",
+      "data cleaning",
+      "inventory analytics",
+      "dashboard development",
+      "automation",
+      "data analysis",
+      "business intelligence",
+      "warehouse analytics",
+      "csv processing"
+    ],
+
+    "technical_concepts": [
+      "inventory intelligence",
+      "stock risk analysis",
+      "warehouse movement analysis",
+      "UOM normalization",
+      "operational analytics"
+    ],
+
+    "achievements": [
+      "Processed over 243000 warehouse movement records",
+      "Built modular analytics architecture",
+      "Created operational risk dashboards",
+      "Automated warehouse KPI analysis"
+    ],
+
+    "ats_keywords": [
+      "Python",
+      "data analysis",
+      "automation",
+      "dashboard development",
+      "ETL",
+      "analytics",
+      "inventory systems",
+      "business intelligence"
+    ]
+  },
+
+  {
+    "id": "ai_life_coach",
+    "title": "AI Life Coach & Sentiment Analysis System",
+    "category": "Artificial Intelligence",
+
+    "domains": [
+      "AI",
+      "Machine Learning",
+      "NLP",
+      "Automation"
+    ],
+
+    "tools": [
+      "Python",
+      "NLP",
+      "Sentiment Analysis"
+    ],
+
+    "skills": [
+      "machine learning",
+      "NLP",
+      "sentiment analysis",
+      "recommendation systems",
+      "behavior analysis",
+      "automation logic"
+    ],
+
+    "technical_concepts": [
+      "text processing",
+      "sentiment classification",
+      "dynamic recommendation systems"
+    ],
+
+    "achievements": [
+      "Built personalized recommendation logic",
+      "Implemented sentiment analysis workflows",
+      "Created behavior-driven response system"
+    ],
+
+    "ats_keywords": [
+      "Python",
+      "machine learning",
+      "NLP",
+      "AI",
+      "automation",
+      "data analysis"
+    ]
+  },
+
+  {
+    "id": "aircraft_preflight_ai",
+    "title": "Aircraft Predictive Maintenance AI System",
+    "category": "Machine Learning",
+
+    "domains": [
+      "AI",
+      "Aerospace",
+      "Predictive Analytics",
+      "Engineering AI"
+    ],
+
+    "tools": [
+      "Python",
+      "NASA CMAPSS Dataset",
+      "Machine Learning"
+    ],
+
+    "skills": [
+      "predictive analytics",
+      "machine learning",
+      "data analysis",
+      "dataset preprocessing",
+      "engineering AI"
+    ],
+
+    "technical_concepts": [
+      "predictive maintenance",
+      "failure prediction",
+      "aircraft safety analytics"
+    ],
+
+    "achievements": [
+      "Worked with NASA CMAPSS dataset",
+      "Developed predictive safety analysis concepts",
+      "Performed engineering dataset preprocessing"
+    ],
+
+    "ats_keywords": [
+      "Python",
+      "machine learning",
+      "predictive analytics",
+      "data analysis",
+      "AI",
+      "engineering"
+    ]
+  }
 ]
