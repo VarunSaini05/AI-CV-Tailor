@@ -8,7 +8,7 @@ from pdf_generator import PDFGenerator
 from pathlib import Path
 
 
-st.set_page_config(page_title="AI CV Tailor", layout="centered")
+st.set_page_config(page_title="AI CV Tailor", layout="wide")
 
 # Minimal dark-mode friendly styling
 st.markdown(
@@ -50,10 +50,16 @@ def run_pipeline(job_description: str):
 
 def main():
 
-    st.title("AI CV Tailor")
+    st.title("AI CV Tailor — Tailored Resumes, Instantly")
     st.subheader("ATS-Optimized Resume Generation System")
 
-    st.write("Paste the job description below and click Generate Tailored CV.")
+    st.markdown(
+        """
+        Paste a job description and generate a tailored, ATS-friendly CV. 
+        The system performs role classification, ATS keyword analysis, experience
+        ranking and generates a downloadable PDF.
+        """
+    )
 
     example_descriptions = {
         "Aerospace Engineer": (
@@ -110,36 +116,48 @@ def main():
                 st.error(f"An error occurred during generation: {exc}")
                 return
 
-        # Status messages
-        st.success(f"ATS Score: {context.get('ats_score', 'N/A')}%")
-        st.info(f"Detected Role Type: {context.get('role_type', 'unknown')}" )
+        # Status panel and ATS analysis
+        left, right = st.columns([2, 1])
 
-        matched = context.get("matched_keywords", [])
-        if matched:
-            st.info(f"Matched Keywords: {', '.join(matched)}")
-        else:
-            st.warning("No matched keywords detected.")
+        with left:
+            st.success(f"ATS Score: {context.get('ats_score', 'N/A')}%")
+            st.info(f"Detected Role Type: {context.get('role_type', 'unknown')}")
 
-        experiences = context.get("matched_experiences", [])
-        if experiences:
-            st.info("Top Experiences Selected:")
-            for exp in experiences[:6]:
-                st.write(f"- {exp}")
-        else:
-            st.warning("No experiences selected by the tailoring engine.")
+            experiences = context.get("matched_experiences", [])
+            if experiences:
+                st.markdown("**Top Experiences Selected:**")
+                for exp in experiences[:6]:
+                    st.write(f"- {exp}")
+            else:
+                st.warning("No experiences selected by the tailoring engine.")
 
-        # PDF download
+        with right:
+            matched = context.get("matched_keywords", [])
+            missing = context.get("missing_keywords", [])
+
+            with st.expander("View ATS Analysis", expanded=False):
+                st.write(f"**Matched Keywords:** {', '.join(matched) if matched else 'None'}")
+                st.write(f"**Missing Keywords:** {', '.join(missing) if missing else 'None'}")
+                st.write(f"**Tailoring Strategy:** {context.get('tailoring_strategy', '')}")
+
+        # PDF download and notification
         try:
             with open(pdf_path, "rb") as f:
                 pdf_bytes = f.read()
 
-            st.success("PDF generated successfully.")
+            st.toast("PDF generated successfully.") if hasattr(st, 'toast') else st.success("PDF generated successfully.")
 
             st.download_button(
                 label="Download Tailored PDF",
                 data=pdf_bytes,
                 file_name=Path(pdf_path).name,
                 mime="application/pdf",
+            )
+
+            st.markdown("---")
+            st.markdown(
+                "<div style='text-align:center; color:gray;'>Built with AI-CV-Tailor — automated tailoring and PDF generation</div>",
+                unsafe_allow_html=True,
             )
 
         except Exception as exc:
