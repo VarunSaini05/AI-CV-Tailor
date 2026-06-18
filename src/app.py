@@ -1,0 +1,168 @@
+import streamlit as st
+from parser import ExperienceGraph
+from ats_score import ATSScorer
+from taylor import CVTailor
+from resume_builder import ResumeBuilder
+from content_generator import ContentGenerator
+from pdf_generator import PDFGenerator
+from pathlib import Path
+
+
+st.set_page_config(page_title="AI CV Tailor", layout="wide")
+
+# Minimal dark-mode friendly styling
+st.markdown(
+    """
+    <style>
+    .stApp { background-color: #0e1117; color: #e6edf3; }
+    .stButton>button { background-color:#1f6feb; color: white; }
+    textarea { background-color: #0b1220; color: #e6edf3; }
+    .css-1d391kg p { color: #e6edf3; }
+    .block-container { padding: 2rem 3rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+def run_pipeline(job_description: str):
+    graph = ExperienceGraph()
+    ats = ATSScorer(graph)
+    tailor = CVTailor(graph, ats)
+    builder = ResumeBuilder()
+    generator = ContentGenerator()
+    pdfgen = PDFGenerator()
+
+    # Build tailoring context
+    context = tailor.build_context(job_description)
+
+    # Build resume object
+    resume = builder.build_resume_object(context)
+
+    # Generate content package
+    content = generator.build_content_package(resume)
+
+    # Generate PDF and return path
+    pdf_path = pdfgen.generate_pdf(content)
+
+    return context, resume, content, pdf_path
+
+
+def main():
+
+    st.title("AI CV Tailor — Tailored Resumes, Instantly")
+    st.subheader("ATS-Optimized Resume Generation System")
+
+    st.markdown(
+        """
+        Paste a job description and generate a tailored, ATS-friendly CV. 
+        The system performs role classification, ATS keyword analysis, experience
+        ranking and generates a downloadable PDF.
+        """
+    )
+
+    example_descriptions = {
+        "Aerospace Engineer": (
+            "Looking for an Aerospace Engineer with CFD, ANSYS simulation, "
+            "propulsion systems, and aerospace design experience. "
+            "Candidate must have strong technical documentation skills and "
+            "manufacturing-oriented CAD workflow knowledge."
+        ),
+        "CAD Design Engineer": (
+            "Seeking a CAD Design Engineer skilled in SolidWorks, AutoCAD, "
+            "technical drafting, manufacturing workflows, and production-ready "
+            "engineering documentation. Experience with CAD automation is a plus."
+        ),
+        "AI & Data Engineering": (
+            "Hiring an AI and Data Engineering practitioner with Python, "
+            "machine learning, data analysis, automation systems, and NLP "
+            "experience. Strong analytical workflow delivery and engineering "
+            "problem-solving are required."
+        )
+    }
+
+    sample_choice = st.selectbox(
+        "Load an example job description",
+        options=["", *example_descriptions.keys()],
+        index=0,
+    )
+
+    if sample_choice:
+        if st.button("Load Example"):
+            st.session_state["job_description"] = example_descriptions[sample_choice]
+
+    if "job_description" not in st.session_state:
+        st.session_state["job_description"] = ""
+
+    job_description = st.text_area(
+        "Job Description",
+        value=st.session_state["job_description"],
+        height=300,
+        placeholder="Paste the full job description here...",
+        key="job_description",
+    )
+
+    if st.button("Generate Tailored CV"):
+
+        if not job_description or not job_description.strip():
+            st.warning("Please paste a job description before generating the CV.")
+            return
+
+        with st.spinner("Generating tailored CV — running ATS and building PDF..."):
+            try:
+                context, resume, content, pdf_path = run_pipeline(job_description)
+
+            except Exception as exc:
+                st.error(f"An error occurred during generation: {exc}")
+                return
+
+        # Status panel and ATS analysis
+        left, right = st.columns([2, 1])
+
+        with left:
+            st.success(f"ATS Score: {context.get('ats_score', 'N/A')}%")
+            st.info(f"Detected Role Type: {context.get('role_type', 'unknown')}")
+
+            experiences = context.get("matched_experiences", [])
+            if experiences:
+                st.markdown("**Top Experiences Selected:**")
+                for exp in experiences[:6]:
+                    st.write(f"- {exp}")
+            else:
+                st.warning("No experiences selected by the tailoring engine.")
+
+        with right:
+            matched = context.get("matched_keywords", [])
+            missing = context.get("missing_keywords", [])
+
+            with st.expander("View ATS Analysis", expanded=False):
+                st.write(f"**Matched Keywords:** {', '.join(matched) if matched else 'None'}")
+                st.write(f"**Missing Keywords:** {', '.join(missing) if missing else 'None'}")
+                st.write(f"**Tailoring Strategy:** {context.get('tailoring_strategy', '')}")
+
+        # PDF download and notification
+        try:
+            with open(pdf_path, "rb") as f:
+                pdf_bytes = f.read()
+
+            st.toast("PDF generated successfully.") if hasattr(st, 'toast') else st.success("PDF generated successfully.")
+
+            st.download_button(
+                label="Download Tailored PDF",
+                data=pdf_bytes,
+                file_name=Path(pdf_path).name,
+                mime="application/pdf",
+            )
+
+            st.markdown("---")
+            st.markdown(
+                "<div style='text-align:center; color:gray;'>Built with AI-CV-Tailor — automated tailoring and PDF generation</div>",
+                unsafe_allow_html=True,
+            )
+
+        except Exception as exc:
+            st.error(f"Failed to load generated PDF for download: {exc}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "name_size": 26,
+    "contact_size": 11,
+    "alignment": "center"
+  },
+
+  "section_headers": {
+    "font_size": 14,
+    "bold": true
+  },
+
+  "content": {
+    "font_size": 11
+  },
+
+  "subheading": {
+    "font_size": 11,
+    "bold": true
+  },
+
+  "modules_text": {
+    "font_size": 9,
+    "italic": false
+  },
+
+  "sections_order": [
+    "summary",
+    "technical_skills",
+    "experience",
+    "projects",
+    "education",
+    "certifications"
+  ],
+
+  "summary_rules": {
+    "max_lines": 5,
+    "ats_optimized": true,
+    "human_readable": true
+  },
+
+  "experience_rules": {
+    "bullet_style": "achievement-focused",
+    "quantified_priority": true,
+    "max_bullets_per_role": 6
+  },
+
+  "project_rules": {
+    "prioritize_relevance": true,
+    "max_projects": 4
+  },
+
+  "ats_rules": {
+    "keyword_density_target": 0.08,
+    "avoid_keyword_stuffing": true,
+    "prioritize_job_description_terms": true
+  }
+}

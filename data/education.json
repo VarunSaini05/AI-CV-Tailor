@@ -1,0 +1,38 @@
+[
+  {
+    "degree": "BEng with Honours in Aerospace Engineering with Pilot Studies (Graduated 2026)",
+    "modules": [
+      "CAD",
+      "Structure & FEA",
+      "Propulsion",
+      "Pilot Studies",
+      "Thermo-Fluids",
+      "Aeromechanics",
+      "Aircraft Design",
+      "Project Management"
+    ],
+    "institution": "University of Lancashire, United Kingdom"
+  },
+  {
+    "degree": "Diploma of Higher Education: Mechanical Engineering (09/2022 – 07/2023)",
+    "modules": [
+      "Electrical and electronic principles",
+      "Engineering Mathematics",
+      "Strength of Materials",
+      "Mechanical Design and Engineering Applications",
+      "Mechanical Science",
+      "English Literature"
+    ],
+    "institution": "PSB Academy, Singapore"
+  },
+  {
+    "degree": "German Language Course (08/2020 – 08/2022)",
+    "modules": [],
+    "institution": "Language Pantheon, Delhi"
+  },
+  {
+    "degree": "Certificate of Higher Education: Medical and Engineering (05/2018 – 06/2020)",
+    "modules": [],
+    "institution": "Himalaya Public Sr. Sec. School, Delhi"
+  }
+]

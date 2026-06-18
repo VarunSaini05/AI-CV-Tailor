@@ -1,33 +1,96 @@
 from parser import ExperienceGraph
 from ats_score import ATSScorer
+from taylor import CVTailor
+from resume_builder import ResumeBuilder
+from content_generator import ContentGenerator
+from pdf_generator import PDFGenerator
+
+from pathlib import Path
+
+
+# -----------------------------------
+# PATHS
+# -----------------------------------
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+JOB_DESCRIPTION_PATH = (
+    BASE_DIR /
+    "data" /
+    "job_description.txt"
+)
+
+# -----------------------------------
+# LOAD JOB DESCRIPTION
+# -----------------------------------
+
+with open(
+    JOB_DESCRIPTION_PATH,
+    "r",
+    encoding="utf-8"
+) as file:
+
+    job_description = file.read()
+
+# -----------------------------------
+# INITIALIZE SYSTEMS
+# -----------------------------------
 
 graph = ExperienceGraph()
+
 ats = ATSScorer(graph)
 
-job_description = """
-We are seeking an Aerospace Engineering graduate with
-experience in CFD, ANSYS, SolidWorks, simulation,
-technical documentation and manufacturing workflows.
+tailor = CVTailor(
+    graph,
+    ats
+)
 
-Knowledge of Python automation and data analysis
-is highly desirable.
-"""
+builder = ResumeBuilder()
 
-print("\n=== ROLE CLASSIFICATION ===")
-print(graph.classify_role(job_description))
+generator = ContentGenerator()
 
-print("\n=== ATS ANALYSIS ===")
-results = ats.calculate_score(job_description)
+pdf = PDFGenerator()
 
-print(f"\nATS SCORE: {results['ats_score']}%")
+# -----------------------------------
+# BUILD CONTEXT
+# -----------------------------------
 
-print("\nMATCHED KEYWORDS:")
-print(results["matched_keywords"])
+context = tailor.build_context(
+    job_description
+)
 
-print("\nMISSING KEYWORDS:")
-print(results["missing_keywords"])
+# -----------------------------------
+# BUILD RESUME
+# -----------------------------------
 
-print("\nMATCHED EXPERIENCES:")
-for item in results["matched_experiences"]:
-    print(f"- {item.get('title', item.get('role', 'Unknown'))}")
+resume = builder.build_resume_object(
+    context
+)
 
+# -----------------------------------
+# GENERATE CONTENT
+# -----------------------------------
+
+content = generator.build_content_package(
+    resume
+)
+
+generator.display_content_package(
+    content
+)
+
+# -----------------------------------
+# GENERATE PDF
+# -----------------------------------
+
+pdf_path = pdf.generate_pdf(
+    content
+)
+
+# -----------------------------------
+# OUTPUT
+# -----------------------------------
+
+print("\n=== PDF GENERATED ===\n")
+
+print(f"Saved to: {pdf_path}")

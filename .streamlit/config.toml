@@ -1,0 +1,17 @@
+[server]
+headless = true
+# Streamlit Cloud provides the port via environment; don't hardcode a port.
+enableCORS = true
+
+[theme]
+base = "dark"
+
+[browser]
+# Allow Streamlit to be reachable when deployed
+gatherUsageStats = false
+
+[global]
+showWarningOnDirectExecution = false
+
+[client]
+# keep minimal; avoid unrecognized keys
