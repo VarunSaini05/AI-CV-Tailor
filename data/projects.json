@@ -216,5 +216,59 @@
       "AI",
       "engineering"
     ]
+  },
+  {
+    "id": "fusion_reactor_dec_system",
+    "title": "Fusion Reactor DEC System",
+    "category": "Aerospace Engineering",
+
+    "domains": [
+      "Simulation",
+      "Data Analysis",
+      "Control Systems",
+      "Automation",
+      "Diagnostics"
+    ],
+
+    "tools": [
+      "Python",
+      "MATLAB",
+      "ANSYS",
+      "Simulink",
+      "SQL",
+      "Git"
+    ],
+
+    "skills": [
+      "systems engineering",
+      "diagnostic workflows",
+      "control system simulation",
+      "data analytics",
+      "automation",
+      "engineering validation"
+    ],
+
+    "technical_concepts": [
+      "reactor diagnostics",
+      "control system engineering",
+      "failure detection",
+      "energy systems",
+      "performance monitoring"
+    ],
+
+    "achievements": [
+      "Designed diagnostics for a fusion reactor control system",
+      "Developed automated monitoring workflows for reactor performance",
+      "Integrated simulation outputs into engineering validation reports"
+    ],
+
+    "ats_keywords": [
+      "simulation",
+      "control systems",
+      "automation",
+      "data analysis",
+      "engineering diagnostics",
+      "systems engineering"
+    ]
   }
 ]

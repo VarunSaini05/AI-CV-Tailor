@@ -55,11 +55,45 @@ def main():
 
     st.write("Paste the job description below and click Generate Tailored CV.")
 
+    example_descriptions = {
+        "Aerospace Engineer": (
+            "Looking for an Aerospace Engineer with CFD, ANSYS simulation, "
+            "propulsion systems, and aerospace design experience. "
+            "Candidate must have strong technical documentation skills and "
+            "manufacturing-oriented CAD workflow knowledge."
+        ),
+        "CAD Design Engineer": (
+            "Seeking a CAD Design Engineer skilled in SolidWorks, AutoCAD, "
+            "technical drafting, manufacturing workflows, and production-ready "
+            "engineering documentation. Experience with CAD automation is a plus."
+        ),
+        "AI & Data Engineering": (
+            "Hiring an AI and Data Engineering practitioner with Python, "
+            "machine learning, data analysis, automation systems, and NLP "
+            "experience. Strong analytical workflow delivery and engineering "
+            "problem-solving are required."
+        )
+    }
+
+    sample_choice = st.selectbox(
+        "Load an example job description",
+        options=["", *example_descriptions.keys()],
+        index=0,
+    )
+
+    if sample_choice:
+        if st.button("Load Example"):
+            st.session_state["job_description"] = example_descriptions[sample_choice]
+
+    if "job_description" not in st.session_state:
+        st.session_state["job_description"] = ""
+
     job_description = st.text_area(
         "Job Description",
-        value="",
+        value=st.session_state["job_description"],
         height=300,
         placeholder="Paste the full job description here...",
+        key="job_description",
     )
 
     if st.button("Generate Tailored CV"):
